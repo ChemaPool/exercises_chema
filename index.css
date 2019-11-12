@@ -1,0 +1,214 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-page {
+  padding: 5%;
+  text-align: center;
+}
+
+.method-pay {
+  font-size: 18px;
+  color: rgb(74, 74, 74);
+}
+
+.box-images {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px rgb(204, 204, 204) solid ;
+}
+
+.box-images-active {
+  border: 4px rgb(141, 122, 255) solid ;
+}
+
+.container-images {
+  text-align: center;
+  padding: 10% 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-visa, .image-mastercard, .image-amex {
+  width: 60px;
+}
+
+.card {
+  width: 300px;
+  padding-top: 1%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(74, 74, 74);
+  border-color: rgb(141, 122, 255);
+  border-radius: 4px;
+}
+
+form {
+  padding: 1em;
+  font-size: 14px;
+  margin-bottom: 5%;
+  background-color: rgb(249, 249, 249);
+}
+
+.container-card-pay {
+  display: flex;
+  padding-right: 5%;
+  justify-content: space-between;
+}
+
+.container-left > .text-card-pay {
+  width: 100px;
+  padding: .5em;
+}
+
+.container-right  > .text-card-pay {
+  width: 100px;
+  padding: .5em;
+}
+
+.text-card-pay, .text-card-postal {
+  padding: 3%;
+  border: rgb(236, 236, 236) solid 1px;
+}
+
+.text-form {
+  margin: 5% 0% 5% 5%;
+}
+
+input.text-card-pay {
+  padding-right: 15%;
+}
+
+input.text-card-postal {
+  width: 150px;
+}
+
+.container-save-card {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5%;
+  padding: 2% 5%;
+  background: #FFF;
+  border: rgb(236, 236, 236) solid 1px;
+}
+
+.checkmark {
+  cursor: pointer;
+  padding: 1%;
+}
+
+.button-footer {
+  padding: 5%;
+  text-align: center;
+}
+
+.button-pay {
+  color: #FFF;
+  padding: 2% 40%;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 2px;
+  text-decoration: none;
+  background-color: rgb(141, 122, 255);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+}
+
+.message-mastercard {
+  font-size: .9em;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(155, 155, 155);
+}
+
+.message-comision-visa, .message-comision-mastercard, .message-comision-amex {
+  color: rgb(155, 155, 155);
+}
+
+.message-card-comision {
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  outline: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid rgb(141, 122, 255);
+}
+
+input[type="checkbox"]:checked {
+  background: rgb(141, 122, 255);
+}
+
+input[type="checkbox"]:after {
+  top: 20%;
+  left: 40%;
+  width: 15%;
+  height: 40%;
+  content: '';
+  display: none;
+  position: relative;
+  border: solid #fff;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid rgb(141, 122, 255);
+}
+
+input[type="radio"]:checked {
+  background: rgb(141, 122, 255);
+}
+
+input[type="radio"]:after {
+  top: 5%;
+  left: 10%;
+  width: 50%;
+  height: 50%;
+  content: '';
+  display: none;
+  position: relative;
+  border-radius: 100%;
+  border: solid #fff;
+}
+
+input[type="radio"]:checked:after {
+  display: block;
+}
