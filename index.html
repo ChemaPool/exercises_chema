@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+  </head>
+
+  <body>
+    <input id="text-movie" type="text" placeholder="Type a name movie">
+    <button onclick="movieData()">Get Data Movies!</button>
+
+    <div class="container">
+      <h2>Search a movie</h2>
+      <p id="message-error-movie"></p>
+      <table id="js-table-movie" class="table">
+        <thead>
+          <tr>
+            <th>Movie Name</th>
+            <th>Year</th>
+            <th>Actors</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script type="text/javascript">
+
+      const movieData = () => {
+        const type = document.getElementById("text-movie").value;
+        const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
+        const errorMovieData = "Movie not found!";
+        $("#js-table-movie > tbody").html("");
+        $("#message-error-movie").html("");
+        
+        axios.get(queryURL)
+        .then(function (response) {
+          if (response.data.Response === "False") {
+            $("#message-error-movie").append(errorMovieData);
+          } else {
+            const showMovieData = '<tr> <td>' + response.data.Title + '</td> <td>' + response.data.Year + '</td> <td>' + response.data.Actors + '</td> </tr>';
+            $("#js-table-movie").append(showMovieData);
+          }
+        })
+        .catch(function (error) {
+        })
+      }
+
+    </script>
+  </body>
+</html>
