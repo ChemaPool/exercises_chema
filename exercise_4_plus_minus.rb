@@ -4,28 +4,14 @@ require 'json'
 require 'stringio'
 
 # Complete the plusMinus function below.
-def plusMinus(arr)
-  numbers_positives = []
-  numbers_negavites = []
-  numbers_zero = []
-  
-  arr.each do |number|
-    if number.positive?
-      numbers_positives.push(number)
-    elsif number.negative?
-      numbers_negavites.push(number)
-    else
-      numbers_zero.push(number)
-    end
-  end
-  
-  p (numbers_positives.size).fdiv(arr.size) 
-  p (numbers_negavites.size).fdiv(arr.size) 
-  p (numbers_zero.size).fdiv(arr.size)
+def plusMinus(numbers, constant)
+  p (numbers.count { |k| k > 0 }.fdiv(constant)).round(6)
+  p (numbers.count { |k| k < 0 }.fdiv(constant)).round(6)
+  p (numbers.count { |k| k == 0 }.fdiv(constant)).round(6)
 end
 
-n = gets.to_i
+constant = gets.to_i
 
-arr = gets.rstrip.split(' ').map(&:to_i)
+numbers = gets.rstrip.split(' ').map(&:to_i)
 
-plusMinus arr
+plusMinus(numbers, constant)
