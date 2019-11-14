@@ -1,11 +1,14 @@
-def product_numbers()
-  numbers = [1, 2, 3, 4]
+def product_numbers(numbers)
   numbers_result = []
   
-  numbers.each do |iteration|
-    numbers_result.insert(0, numbers.inject(:*) / iteration)
+  numbers.each do |number|
+    numbers_result.push(numbers.inject(:*) / number)
   end
-  numbers_result.sort.reverse
+
+  numbers_result
+
 end
 
-product_numbers
+numbers = [1, 2, 3, 4]
+
+product_numbers numbers
