@@ -6,7 +6,6 @@ def product_numbers(numbers)
   end
 
   numbers_result
-
 end
 
 numbers = [1, 2, 3, 4]
