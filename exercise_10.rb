@@ -9,7 +9,6 @@ def sum_numbers(numbers)
   end
 
   sum_numbers_result.sum
-
 end
 
 numbers = [1200000265, 1000002360, 1670000800, 1000006002, 1000000233]
