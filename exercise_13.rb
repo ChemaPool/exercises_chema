@@ -8,15 +8,14 @@ class Contact
     @contacts
   end
   def self.find_by(key, value)
+    contact = []
     @contacts.each do |value_contact|
       next unless value_contact[key].eql?(value)
-        puts "Age: #{value_contact[:age]}"
-        puts "Firts Name: #{value_contact[:first_name]}"
-        puts "Last Name: #{value_contact[:last_name]}"
-        puts "Genre: #{value_contact[:genre]}"
+       contact.push(value_contact[:age], value_contact[:first_name], value_contact[:last_name], value_contact[:genre])
     end
+    contact
   end
 end
 
 Contact.all
-Contact.find_by(:last_name, "Sanchez")
+Contact.find_by(:last_name, "Lopez")
