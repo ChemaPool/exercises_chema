@@ -20,7 +20,6 @@ class Auto
      end
     raise ArgumentError, "The auto is not driving"
   end
-
 end
 
 Auto.power_on_auto?
