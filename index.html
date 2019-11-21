@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Type a word</p>
+
+<input id="text-insert" type="text" >
+
+<h2 id="text-show"></h2>
+
+<button type="button" onclick='viewWord()'>Click Me!</button>
+
+<script type="text/javascript">
+  function viewWord() {
+    const getWord = document.getElementById('text-insert').value;
+    document.getElementById('text-show').innerHTML = getWord;
+  }
+</script>
+
+</body>
+</html>
