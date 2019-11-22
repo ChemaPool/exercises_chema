@@ -39,8 +39,8 @@
         .then(function (response) {
           $("#js-table-movie").append('<tr>' + 
             '<td align="center" >' + response.data.Title + '</td>'+
- 	          '<td align="center" >' + response.data.Year + '</td>'+
- 	          '<td align="center" >' + response.data.Actors + '</td>'+'</tr>');
+ 	    '<td align="center" >' + response.data.Year + '</td>'+
+            '<td align="center" >' + response.data.Actors + '</td>'+'</tr>');
           console.log(response);
         })
         .catch(function (error) {
