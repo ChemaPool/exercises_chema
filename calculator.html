@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Type two numbers</p>
+
+<input id="first-number" type="number" >
+<input id="second-number" type="number" >
+
+<p id="message-result"></p>
+
+<button type="button" onclick='sum()'>+</button>
+<button type="button" onclick='subtraction()'>-</button>
+<button type="button" onclick='multiply()'>*</button>
+<button type="button" onclick='divide()'>/</button>
+
+<script type="text/javascript">
+  function getFirstNumber(){
+    return firstNumber = parseInt(document.getElementById('first-number').value)
+  }
+
+  function getSecondNumber(){
+    return secondNumber = parseInt(document.getElementById('second-number').value)
+  }
+
+  const sum = () => {
+    sumNumbers = getFirstNumber() + getSecondNumber();
+    responseResult(sumNumbers);
+  }
+
+  const subtraction = () => {
+    subtractionNumbers = getFirstNumber() - getSecondNumber();
+    responseResult(subtractionNumbers);
+  }
+
+  const multiply = () => {
+    multiplyNumbers = getFirstNumber() * getSecondNumber();
+    responseResult(multiplyNumbers);
+  }
+
+  const divide = () => {
+    divideNumbers = getFirstNumber() / getSecondNumber();
+    responseResult(divideNumbers);
+  }
+
+  const responseResult = (result) => {
+    const messageCalc = document.getElementById('message-result');
+    const messageError = "Invalid number, try again";
+    !Number.isNaN(result) ?  messageCalc.innerHTML = result :  messageCalc.innerHTML = messageError;
+  }
+
+</script>
+
+</body>
+</html>
