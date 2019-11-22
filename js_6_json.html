@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Movies</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+  </head>
 
-<body>
-  <button onclick="getAllRequest()">Get Data Movies!</button>
+  <body>
+    <button onclick="getAllRequest()">Get Data Movies!</button>
 
-  <div class="container">
+    <div class="container">
       <h2>Basic Table</h2>
       <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
       <table id="js-table-movie" class="table">
@@ -26,27 +26,27 @@
         </tbody>
       </table>
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-  <script type="text/javascript">
-    const type = "jim";
-    const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script type="text/javascript">
+      const type = "jim";
+      const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
 
-    function getAllRequest(){
-      axios.get(queryURL)
-      .then(function (response) {
-
-        $("#js-table-movie").append('<tr>' + 
- 	        '<td align="center" >' + response.data.Title + '</td>'+
- 	        '<td align="center" >' + response.data.Year + '</td>'+
- 	        '<td align="center" >' + response.data.Actors + '</td>'+'</tr>');
-         console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-    }
-  </script>
-</body>
+      function getAllRequest(){
+        axios.get(queryURL)
+        .then(function (response) {
+          $("#js-table-movie").append('<tr>' + 
+            '<td align="center" >' + response.data.Title + '</td>'+
+ 	          '<td align="center" >' + response.data.Year + '</td>'+
+ 	          '<td align="center" >' + response.data.Actors + '</td>'+'</tr>');
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      }
+    </script>
+  </body>
 </html>
