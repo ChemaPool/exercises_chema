@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <button onclick="getAllRequest()">Get Data Movies!</button>
+    <button onclick="movieData()">Get Data Movies!</button>
 
     <div class="container">
       <h2>Basic Table</h2>
@@ -21,8 +21,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -34,19 +32,17 @@
       const type = "jim";
       const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
 
-      function getAllRequest(){
+      function movieData(){
         axios.get(queryURL)
         .then(function (response) {
-          $("#js-table-movie").append('<tr>' + 
-            '<td align="center" >' + response.data.Title + '</td>'+
- 	    '<td align="center" >' + response.data.Year + '</td>'+
-            '<td align="center" >' + response.data.Actors + '</td>'+'</tr>');
-          console.log(response);
+          const showMovieData = '<tr> <td>' + response.data.Title + '</td> <td>' + response.data.Year + '</td> <td>' + response.data.Actors + '</td> </tr>';
+          $("#js-table-movie").append(showMovieData);
         })
         .catch(function (error) {
           console.log(error);
         })
       }
+      
     </script>
   </body>
 </html>
