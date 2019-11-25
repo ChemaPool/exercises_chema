@@ -9,7 +9,6 @@ class Contact
 
   def self.find_by(key, value)
     all.detect { |contact| return contact if contact[key] == value }
-    puts "No matches"
   end
 end
 
