@@ -1,0 +1,88 @@
+* {
+  font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+body {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+  color: #333;
+  padding: 1em;
+  text-align: center;
+}
+
+#since{
+  color: #999;
+}
+
+#price {
+  display: block;
+  font-size: 20px;
+}
+
+.container-left{
+  background: url("img_1.jpg") left no-repeat, linear-gradient(
+    to bottom,
+    white 50%,
+    gray
+  );
+  background-size: cover;
+  background-blend-mode: multiply;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 20em;
+}
+
+#text-description {
+  color: #999;
+  font-size: .8em;
+  font-weight: bold;
+  overflow: hidden;
+  max-height: 3.6em;
+}
+
+#text-address {
+  padding-top: 1em;
+  display: block;
+  font-size: 18px;
+  color: #2a63cb;
+  font-weight: bold;
+  white-space: nowrap;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#text-location {
+  display: block;
+  font-size: 14px;
+  color: #999;
+}
+
+.container-right {
+  padding-top: 5em;
+  padding-left: 2em;
+}
+
+.flexbox-container {
+  border-style: solid;
+  border-color: gainsboro;
+  border-width: .1em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.flexbox-container > *:nth-child(1) {
+  width: calc(100% / 3 * 2);
+}
+
+.flexbox-container > *:nth-child(2) {
+  width: calc(100% / 3 * 1);
+}
