@@ -3,10 +3,7 @@
 }
 
 body {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 5% 10% 5% 10%;
 }
 
 h1 {
@@ -26,29 +23,8 @@ h1 {
   font-size: 20px;
 }
 
-.container-left{
-  background: url("img_1.jpg") left no-repeat, linear-gradient(
-    to bottom,
-    white 50%,
-    gray
-  );
-  background-size: cover;
-  background-blend-mode: multiply;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  height: 20em;
-}
-
-#text-description {
-  color: #999;
-  font-size: .8em;
-  font-weight: bold;
-  overflow: hidden;
-  max-height: 3.6em;
-}
-
 #text-address {
-  padding-top: 1em;
+  padding-top: 2em;
   display: block;
   font-size: 18px;
   color: #2a63cb;
@@ -65,8 +41,29 @@ h1 {
   color: #999;
 }
 
+#text-description {
+  padding-top: .6em;
+  color: #999;
+  font-weight: bold;
+  overflow: hidden;
+  max-height: 3.6em;
+}
+
+.container-left{
+  background: url("img_1.jpg") left no-repeat, linear-gradient(
+    to bottom,
+    white 50%,
+    gray
+  );
+  background-size: cover;
+  background-blend-mode: multiply;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 20em;
+}
+
 .container-right {
-  padding-top: 5em;
+  padding-top: 2em;
   padding-left: 2em;
 }
 
