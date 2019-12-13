@@ -3,18 +3,17 @@ def ref_object_touch(record)
 
   member_ids = []
   organization_id_changed = record.saved_changes['organization_id']
-
-  return if organization_id_changed && organization_id_changed[0] != organization_id_changed[1]
+  return unless organization_id_changed && organization_id_changed[0] == organization_id_changed[1]
   return find_organization if organization_id_changed[0]
   return record_organization if record.organization
 
-  yield(member_ids)
-
+  member_id(member_ids)
   true
 end
 
 def find_organization(member_ids, organization_id_changed)
   return if User.where(organization_id: organization_id_changed[0]).count < 100
+
   organization = Organization.find(organization_id_changed[0])
   organization.touch
   member_ids = organization.member_ids
@@ -22,11 +21,14 @@ end
 
 def record_organization(member_ids)
   return if User.where(organization_id: record.organization_id).count < 100
+
   record.organization.touch
   member_ids += record.organization.member_ids
 end
 
-ref_object_touch member_ids.uniq.each do |user_id|
-  next if user_id == record.id
+def member_id(member_ids)
+  member_ids.uniq.each do |user_id|
+    next if user_id == record.id
+  end
   User.find(user_id).touch
 end
