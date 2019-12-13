@@ -5,8 +5,8 @@ def in_groups(list_words, limit)
   word.each_slice(limit).to_a.each do |words|
     list_words_new << words.join
   end
-  list_words_new
 
+  list_words_new
 end
 
 list_words = ['hola', 'este', 'es', 'un', 'nuevo', 'mensaje']
